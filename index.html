@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <title>LiT: Unifying LiDAR "Languages" with LiDAR Translator</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- third-party css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/template.css">
+    <link rel="stylesheet" href="css/page.css">
+    <link rel="stylesheet" href="css/scene-viewer.css">
+    <link rel="stylesheet" href="css/frame-viewer.css">
+
+    <!-- third-party js -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/clipboard.min.js"></script>
+    <!-- three.js -->
+    <script src="js/three.min.js"></script>
+    <script src="js/PLYLoader.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <!-- custom js -->
+    <script src="js/SceneViewer.js"></script>
+</head>
+
+<body>
+    <div class="container" id="main">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2 class="col-md-12 text-center"
+                    style="font-weight: bold; display: flex; align-items: center; justify-content: center;">
+                    <img src="assets/lit_logo.png" alt="LiT Logo" style="height: 60px; margin-right: 15px;">
+                    <span>
+                        <br>LiT: Unifying LiDAR "Languages" with LiDAR Translator</br>
+                        <span style="font-size: 0.8em; color: #777;">
+                            NeurIPS 2024
+                        </span>
+                    </span>
+                </h2>
+            </div>
+        </div>
+
+        <br></br>
+
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <ul class="list-inline">
+                    <li>
+                        <a href="https://yxlao.github.io/">
+                            <strong>Yixing Lao</strong>
+                        </a>
+                        </br>HKU
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.co.jp/citations?user=1ltylFwAAAAJ">
+                            <strong>Tao Tang</strong>
+                        </a>
+                        </br>Sun Yat-sen University
+                    </li>
+                    <li>
+                        <a href="https://xywu.me/">
+                            <strong>Xiaoyang Wu</strong>
+                        </a>
+                        </br>HKU
+                    </li>
+                    <li>
+                        <a href="https://damo.alibaba.com/labs/intelligent-transportation">
+                            <strong>Peng Chen</strong>
+                        </a>
+                        </br>Alibaba
+                    </li>
+                    <li>
+                        <a href="https://www.yukaicheng.cn/">
+                            <strong>Kaicheng Yu<sup>*</sup></strong>
+                        </a>
+                        </br>Westlake University
+                    </li>
+                    <li>
+                        <a href="https://hszhao.github.io/">
+                            <strong>Hengshuang Zhao<sup>*</sup></strong>
+                        </a>
+                        </br>HKU
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <ul class="nav nav-pills nav-justified">
+                    <li>
+                        <a href="">
+                            <img src="assets/paper_image.jpg" height="60px" style="display: block; margin: 0 auto;">
+                            <h4><strong>Paper (Coming Soon)</strong></h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="assets/github.png" height="60px" style="display: block; margin: 0 auto;">
+                            <h4><strong>Code (Coming Soon)</strong></h4>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    Abstract
+                </h3>
+                <p class="text-justify">
+                    LiDAR data exhibits significant domain gaps when collected from different devices or vehicles, even
+                    within the same driving environments. These gaps, akin to language barriers, hinder the synergistic
+                    use of diverse LiDAR datasets, limiting the scalability and unification of perception models. To
+                    address this challenge, we present the <i>LiDAR Translator (LiT)</i>, a novel framework designed to
+                    unify LiDAR data into a single target "language". LiT represents a comprehensive system that
+                    integrates: a) generalizable scene modeling for foreground and background reconstruction; b)
+                    realistic LiDAR simulation with statistical and ray-drop modeling; c) a highly efficient ray casting
+                    engine accelerated on GPU. LiT enables efficient state-of-the-art zero-shot and unified domain
+                    detection capabilities across diverse LiDAR datasets, marking a significant step toward practical
+                    and efficient domain unification for LiDAR-based autonomous driving systems.
+                    Source code and demos are available at: <a
+                        href="https://yxlao.github.io/lit">https://yxlao.github.io/lit</a>.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    Point Clouds Visualizations (Interactive)
+                </h3>
+                <p class="text-justify">
+                    We show interactive point cloud visualizations for the source domain and the LiT translated
+                    domains.
+                </p>
+            </div>
+            <div class="col-md-12">
+                <p class="text-center" style="font-size: 1.125em; text-align: center;">
+                    (Mouse wheel to zoom in/out, drag to rotate, ctrl + drag to pan)
+                </p>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="sv-canvas-container">
+                    <div class="sv-canvas-wrapper">
+                        <div id="canvas-waymo" class="sv-canvas"></div>
+                        <div class="sv-button-container">
+                            <button class="sv-control-button sv-zoom-in-button">+</button>
+                            <button class="sv-control-button sv-zoom-out-button">-</button>
+                            <button class="sv-control-button sv-reset-button">⟳</button>
+                        </div>
+                        <div class="sv-canvas-label">Waymo (Source)</div>
+                    </div>
+                    <div class="sv-canvas-wrapper">
+                        <div id="canvas-nuscenes" class="sv-canvas"></div>
+                        <div class="sv-button-container">
+                            <button class="sv-control-button sv-zoom-in-button">+</button>
+                            <button class="sv-control-button sv-zoom-out-button">-</button>
+                            <button class="sv-control-button sv-reset-button">⟳</button>
+                        </div>
+                        <div class="sv-canvas-label">nuScenes (LiT Translated)</div>
+                    </div>
+                    <div class="sv-canvas-wrapper">
+                        <div id="canvas-kitti" class="sv-canvas"></div>
+                        <div class="sv-button-container">
+                            <button class="sv-control-button sv-zoom-in-button">+</button>
+                            <button class="sv-control-button sv-zoom-out-button">-</button>
+                            <button class="sv-control-button sv-reset-button">⟳</button>
+                        </div>
+                        <div class="sv-canvas-label">KITTI (LiT Translated)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    Per-Frame Visualizations
+                </h3>
+                <p class="text-justify">
+                    We show per-frame visualizations for the source domain (1st column), the reconstructed scene
+                    (2nd column), and the LiT translated domains (3rd and 4th columns).
+                </p>
+
+                <div class="text-center">
+                    <video width="100%" controls autoplay loop muted>
+                        <source src="assets/video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                        <a href="assets/video.mp4" download>Download the video here.</a>
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    Unifying LiDAR "Languages" with LiT
+                </h3>
+                <p class="text-justify">
+                    LiT is a data-driven approach for unified domain learning, we compare LiT with model-based
+                    adaptations. (a) Training a model on source domain data and directly applying it to the target
+                    domain typically results in poor performance due to the domain gap. (b) Model-based adaptation
+                    techniques adapt the model to the target domain, but do not explicitly model the target domain data
+                    LiDAR characteristics and data distribution. (c) LiT directly translates LiDAR data from the
+                    multiple source domains to a unified target domain, effectively bridging the domain gaps and enables
+                    joint training across multiple datasets.
+                </p>
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="text-center">
+                            <p><img src="assets/unify_domain.jpg" width="100%"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <h3>
+                    How LiT Works
+                </h3>
+                <p class="text-justify">
+                    LiT can directly translate LiDAR data from one domain to another.
+                    Given a sequence of source domain LiDAR scans, LiT reconstructs the scene background with neural
+                    implicit representations from the fused frame. The foreground objects are tracked across frames
+                    and reconstructed. With the reconstructed scene, LiT then performs GPU-accelerated ray casting
+                    with the target LiDAR model to generate the translated LiDAR scans, matching the target domain
+                    characteristics. The typical time for translating a 200-frame LiDAR scene is less than a minute.
+                </p>
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-md-offset-1">
+                        <div class="text-center">
+                            <p><img src="assets/pipeline.jpg" width="100%"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" align="right">
+                <p style="padding-top: 36px;">
+                    The website template was borrowed from
+                    <a href="https://jonbarron.info/mipnerf360/">here</a>.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>
