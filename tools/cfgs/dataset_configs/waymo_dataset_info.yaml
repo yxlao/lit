@@ -1,0 +1,47 @@
+DATASET: 'WaymoDatasetInfo'
+DATA_PATH: '../data/waymo'
+PROCESSED_DATA_TAG: 'waymo_processed_data'
+
+POINT_CLOUD_RANGE: [-75.2, -75.2, -2, 75.2, 75.2, 4]
+
+DATA_SPLIT: {
+    'train': train,
+    'test': val
+}
+
+SAMPLED_INTERVAL: {
+    'train': 1,
+    'test': 1
+}
+
+INFO_WITH_FAKELIDAR: False
+
+DATA_AUGMENTOR:
+    DISABLE_AUG_LIST: []
+    AUG_CONFIG_LIST: []
+
+
+POINT_FEATURE_ENCODING: {
+    encoding_type: absolute_coordinates_encoding,
+    used_feature_list: ['x', 'y', 'z', 'intensity', 'elongation'],
+    src_feature_list: ['x', 'y', 'z', 'intensity', 'elongation'],
+}
+
+
+DATA_PROCESSOR:
+    - NAME: mask_points_and_boxes_outside_range
+      REMOVE_OUTSIDE_BOXES: True
+
+    - NAME: shuffle_points
+      SHUFFLE_ENABLED: {
+        'train': True,
+        'test': True
+      }
+
+    - NAME: transform_points_to_voxels
+      VOXEL_SIZE: [0.1, 0.1, 0.15]
+      MAX_POINTS_PER_VOXEL: 5
+      MAX_NUMBER_OF_VOXELS: {
+        'train': 80000,
+        'test': 90000
+      }

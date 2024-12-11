@@ -1,0 +1,88 @@
+examples/cars/Logs.pth
+examples/cars/LatentCodes/
+examples/cars/LatentMeshes/
+examples/cars/LatentImages/
+examples/cars/LegitPointClouds/
+examples/cars/SelectPointClouds/
+examples/cars/ModelParameters/
+examples/cars/OptimizerParameters/
+examples/cars/Reconstructions/
+examples/cars/Reconstructions_trainset/
+examples/cars/Reconstructions_testset/
+
+examples/cars_eikonal/Logs.pth
+examples/cars_eikonal/LatentCodes/
+examples/cars_eikonal/LatentMeshes/
+examples/cars_eikonal/LatentImages/
+examples/cars_eikonal/LegitPointClouds/
+examples/cars_eikonal/SelectPointClouds/
+examples/cars_eikonal/ModelParameters/
+examples/cars_eikonal/OptimizerParameters/
+examples/cars_eikonal/Reconstructions/
+examples/cars_eikonal/Reconstructions_trainset/
+examples/cars_eikonal/Reconstructions_testset/
+
+build/
+bin/
+data/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
