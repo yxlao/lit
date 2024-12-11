@@ -89,8 +89,7 @@
 }
 
 .sv-interactive-cursor::before {
-    font-family: 'FontAwesome';
-    content: '\f047';  /* fa-arrows */
+    content: '✥';
     font-size: 24px;
     color: #333;
 }
