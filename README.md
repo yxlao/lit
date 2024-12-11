@@ -10,6 +10,11 @@ LiT (LiDAR Translator), is a pioneering framework aimed at bridging the domain g
   <img src="assets/frame.jpg"/>
 </p>
 
+This project is built with [CamTools](https://github.com/yxlao/camtools).
+
+<p>
+<a href="https://github.com/yxlao/camtools"><img src="https://raw.githubusercontent.com/yxlao/camtools/master/camtools/assets/built_with_camtools_dark.svg" width=240 alt="Built with CamTools"></a>
+</p>
 
 ## Code Structure
 
