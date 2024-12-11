@@ -7,7 +7,7 @@
 LiT (LiDAR Translator), is a pioneering framework aimed at bridging the domain gaps in LiDAR data from various devices and environments. It facilitates the unification of diverse LiDAR datasets, enhancing scalability and coherence in perception models. Our system includes advanced scene modeling, realistic LiDAR simulation, and a GPU-accelerated ray casting engine, enabling cutting-edge zero-shot domain detection. Explore LiT and see our interactive demos at our [project page](https://yxlao.github.io/lit), and check out our [paper](https://yxlao.github.io/lit/lit_paper.pdf) for more details.
 
 <p align="center">
-  <img src="assets/teaser.jpg"/>
+  <img src="assets/frame.jpg"/>
 </p>
 
 
