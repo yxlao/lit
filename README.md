@@ -16,6 +16,19 @@ This project is built with [CamTools](https://github.com/yxlao/camtools).
 <a href="https://github.com/yxlao/camtools"><img src="https://raw.githubusercontent.com/yxlao/camtools/master/camtools/assets/built_with_camtools_dark.svg" width=240 alt="Built with CamTools"></a>
 </p>
 
+## Citation
+
+If you find our work useful in your research, please consider citing:
+
+```bib
+@inproceedings{lao2024lit,
+  title     = {{LiT}: Unifying LiDAR "Languages" with LiDAR Translator},
+  author    = {Lao, Yixing and Tang, Tao and Wu, Xiaoyang and Chen, Peng and Yu, Kaicheng and Zhao, Hengshuang},
+  booktitle = {NeurIPS},
+  year      = {2024}
+}
+```
+
 ## Code Structure
 
 ```bash
